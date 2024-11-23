@@ -1,0 +1,52 @@
+# Configuration for the email processing system
+
+# Path to the database file
+database_url: "sqlite:///path/to/database.db"
+
+# Path to the log file
+log_file: "/data/importer.log"
+
+# Path where email attachments are saved
+save_path: "/data/attachments"
+
+# API key for OpenAI service
+open_api_key: "your_openai_api_key"
+
+# List of passwords used for decrypting PDF attachments
+pdf_passwords:
+    - "example_password_1"
+    - "example_password_2"
+
+# Email accounts configuration
+emails:
+  - account:
+      email_address: "example1@example.com"
+      password: "example_password"
+      imap_server: "imap.example.com"
+      # skip: 8000
+
+  - account:
+      email_address: "example2@example.com"
+      password: "example_password"
+      imap_server: "imap.example.com"
+      # skip: 4000
+
+# Google API client configuration
+client_config_backend: file
+client_config_file: /data/client_secret.json
+
+# Google API credentials management
+save_credentials: True
+save_credentials_backend: file
+save_credentials_file: /data/credentials.json
+
+get_refresh_token: True
+
+# Google Drive root folder ID for storing exported emails
+root_folder_id: "your_google_drive_root_folder_id"
+
+# Base directory for storing exported files
+base_dir: "your_exported_directory"
+
+# Settings file for GoogleAuth
+settings_file: "your_config.yaml"

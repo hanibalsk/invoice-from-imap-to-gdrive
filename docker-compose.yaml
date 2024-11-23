@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  plex-webhook:
+    image: registry.rlt.sk/invoice-from-imap-to-gdrive:latest
+    container_name: invoice-from-imap-to-gdrive
+    ports:
+      - "7667:7667"
+    volumes:
+      - /data:/data
+    environment:
+      FLASK_PORT: 7667
+      FLASK_ENV: production
+      FLASK_DEBUG: 'false'
+      CONFIG_PATH: /data/config.yaml
+    restart: unless-stopped

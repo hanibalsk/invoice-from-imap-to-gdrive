@@ -10,7 +10,7 @@ from organization import OrganizationDetector
 
 class Main:
     def __init__(self):
-        self.config = load_config("config.yaml")
+        self.config = load_config(os.getenv("CONFIG_PATH", "config.yaml"))
 
         # Configure logging
         log_file = self.config.get('log_file', '/data/server.log')
