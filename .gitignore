@@ -1,0 +1,10 @@
+config.yaml
+.venv
+__pycache__
+*.pyc
+.idea
+emails.db
+client_secret_627702345414-1vmofk1k4polma63g5pt51nqhvn98212.apps.googleusercontent.com.json
+credentials.json
+exported
+attachments

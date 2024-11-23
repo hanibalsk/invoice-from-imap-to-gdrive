@@ -1,0 +1,13 @@
+# docker/.dockerignore
+__pycache__
+*.pyc
+*.pyo
+.git
+.gitignore
+.idea
+.venv
+config.yaml
+emails.db
+client_secret_627702345414-1vmofk1k4polma63g5pt51nqhvn98212.apps.googleusercontent.com.json
+exported
+attachments
