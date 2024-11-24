@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 from logging.handlers import RotatingFileHandler
+from time import sleep
 
 from config_loader import load_config
 from email_exporter import EmailOrganizer
@@ -51,14 +52,22 @@ class Main:
         self.detector.update_emails_with_organization()
 
     def organize_email(self):
-        self.organizer.organize_and_upload()
+        self.organizer.organize_and_upload(self.config.get('batch_size', 10))
 
 
 main = Main()
 
+
 async def background_task():
     while True:
-        main.organize_email()
         logging.info("Background job running...")
-        await asyncio.sleep(60)
+        main.organize_email()
 
+        interval = main.config.get('background_interval', 60)
+        logging.info("Waiting for %d seconds before running the background job again...", interval)
+        sleep(interval)
+
+
+async def run():
+    asyncio.create_task(background_task())  # Start background task
+    logging.info("Background task started.")

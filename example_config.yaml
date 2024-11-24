@@ -50,3 +50,8 @@ base_dir: "your_exported_directory"
 
 # Settings file for GoogleAuth
 settings_file: "your_config.yaml"
+
+
+background_interval: 60
+
+batch_size: 10

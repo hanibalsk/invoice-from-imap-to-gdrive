@@ -24,8 +24,8 @@ ENV CONFIG_PATH="/data/config.yaml"
 VOLUME ["/data"]
 
 # Command to run the application using Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:7667", "--timeout", "400", "api:app"]
-
+#CMD ["gunicorn", "-b", "0.0.0.0:7667", "--timeout", "400", "api:app"]
+CMD ["/bin/bash", "/app/start.sh"]
 # Multi-platform support for different architectures
 # Example build command:
 # docker buildx build --platform linux/amd64,linux/arm64 -t your-image-name:latest .
