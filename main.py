@@ -1,3 +1,4 @@
+import asyncio
 import logging
 import os
 from logging.handlers import RotatingFileHandler
@@ -55,5 +56,9 @@ class Main:
 
 main = Main()
 
-if __name__ == "__main__":
-    main.import_email(year=2024, month=11)
+async def background_task():
+    while True:
+        main.organize_email()
+        logging.info("Background job running...")
+        await asyncio.sleep(60)
+

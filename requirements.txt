@@ -9,3 +9,4 @@ openai
 PyPDF2
 pycryptodome
 pydrive
+asyncio

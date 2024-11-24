@@ -24,7 +24,7 @@ ENV CONFIG_PATH="/data/config.yaml"
 VOLUME ["/data"]
 
 # Command to run the application using Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:4667", "api:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:7667", "--timeout", "400", "api:app"]
 
 # Multi-platform support for different architectures
 # Example build command:

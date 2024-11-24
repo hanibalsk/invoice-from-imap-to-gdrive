@@ -28,6 +28,8 @@ class ImportedEmail(Base):
     spam_report = Column(Text, nullable=True)
     organization_name = Column(Text, nullable=True)
     is_invoice = Column(Boolean, default=False)
+    processed_path = Column(String, nullable=True)
+    uploaded = Column(Boolean, default=False)
 
     @classmethod
     def save_to_database(cls, session, **kwargs):
